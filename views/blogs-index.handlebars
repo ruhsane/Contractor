@@ -1,0 +1,9 @@
+<h1>Blogs</h1>
+ <a href="/blogs/new">New Blog</a>
+
+ <div class="row">
+    {{#each blogs}}
+        <h2><a href="/blogs/{{this.id}}">{{this.title}}</a></h2>
+        <!-- <small>{{this.forumTitle}}</small> -->
+    {{/each}}
+</div>
