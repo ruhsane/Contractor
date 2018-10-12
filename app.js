@@ -5,8 +5,6 @@ const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/contractor');
 
-
-
 const Comment = require('./models/comment')
 
 const Blog = require("./models/blog")
@@ -24,8 +22,6 @@ var exphbs = require('express-handlebars');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
-
-
 
 
 // INDEX
@@ -63,7 +59,7 @@ app.get('/blogs/:id', (req, res) => {
       // respond with the template with both values
       res.render('blogs-show', { blog: blog, comments: comments })
     })
-  }).catch((err) => {
+}).catch((err) => {
     // catch errors
     console.log(err.message)
   });

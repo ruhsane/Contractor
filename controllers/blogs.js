@@ -4,8 +4,7 @@ module.exports = function (app, Blog) {
     Blog.find()
       .then(blogs => {
         res.render('blogs-index', {blogs: blogs});
-      })
-      .catch(err => {
+      }).catch(err => {
         console.log(err);
       });
   });
